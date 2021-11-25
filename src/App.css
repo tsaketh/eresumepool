@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+.pull-top-fix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;  
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.table-contents, .table-headers {
+    border-spacing: 0%;
+    border-top: 1px solid lightslategrey;
+    font-size: 0.875rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+th {
+background-color: lightslategray;
 }
-
-.App-link {
-  color: #61dafb;
+.table-scroll {
+width: inherit;
+overflow-x: auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mobile-only{
+    display: block;
+}
+.desktop-only {
+    display: none;
+}
+.card-desktop {
+    margin-top: 2rem;
+}
+.project-at {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: #777;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+.pull-right-fix {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.pull-right {
+    margin-right: 0;
+    margin-left: auto;
+}
+.project-techs {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+.project-techs::-webkit-scrollbar {
+    display: none;
+}
+@media screen and (min-width: 426px) {
+    .desktop-only {
+        display: block;
+    }
+    .mobile-only{
+        display: none;
+    }
+    .card-desktop{
+        margin-top: 0rem;
+    }
+    .display-on-card-header-hover{
+        display: none;
+    }
+    .card-header:hover > div > .display-on-card-header-hover {
+        display: block;
+    } 
+    .header{
+        grid-area: header;
+    }
+    .general-information{
+        grid-area: generalinformation;
+    }
+    .summary{
+        grid-area: summary;
+    }
+    .education{
+        grid-area: education;
+    }
+    .skills{
+        grid-area: skills;
+    }
+    .experience{
+        grid-area: experience;
+    }
+    .user-grid-desktop{
+        display: grid;
+        grid-template: 
+            'header header header header header'
+            'generalinformation generalinformation summary summary summary'
+            'generalinformation generalinformation summary summary summary'
+            'education education skills skills skills'
+            'education education skills skills skills'
+            'education education skills skills skills'
+            'experience experience experience experience experience'
+            'experience experience experience experience experience'
+            'experience experience experience experience experience'
+            'experience experience experience experience experience';
+        gap: 1rem .875rem;
+    }
+    /* .project-techs {
+        display: flex;
+        justify-content: space-between;
+    } */
+}
+@media screen and (min-width: 769px) {
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .project-content {
+        display: flex;
+        justify-content: space-between;
+    }
+    .project-at {
+        border-top: none;
+    }
+    /* .project-techs {
+        display: flex;
+        justify-content: space-between;
+        overflow-x: scroll;
+    } */
+    .project-name {
+        max-width: 66.67%;
+        white-space: nowrap;
+    }
+    /* .project-techs::-webkit-scrollbar {
+        display: none;
+    } */
+    .width-1by3 {
+        width: 33.33%;
+    }
+    .width-2by3 {
+        width: 66.67%;
+    }
+}
+@media screen and (min-width: 1025px) {
+    /* .desktop-only {
+        display: block;
+    }
+    .mobile-only{
+        display: none;
+    }
+    .display-on-card-header-hover{
+        display: none;
+    }
+    .card-header:hover > div > .display-on-card-header-hover {
+        display: block;
+    } 
+    .header{
+        grid-area: header;
+    }
+    .general-information{
+        grid-area: generalinformation;
+    }
+    .summary{
+        grid-area: summary;
+    }
+    .education{
+        grid-area: education;
+    }
+    .skills{
+        grid-area: skills;
+    }
+    .experience{
+        grid-area: experience;
+    } */
+    .user-grid-desktop{
+        display: grid;
+        grid-template: 
+            'header header header header header'
+            'generalinformation generalinformation summary summary summary'
+            'generalinformation generalinformation summary summary summary'
+            'education skills experience experience experience'
+            'education skills experience experience experience'
+            'education skills experience experience experience';
+        gap: 1rem .875rem;
+    }
 }
